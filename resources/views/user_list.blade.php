@@ -19,12 +19,13 @@ jQuery( document ).ready(function( $ ) {
             $('#table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{{ route('getData') }}',
+            ajax: '{{ route('getData1') }}',
             columns: [
+                     // { data: 'action', name: 'action' },
                      { data: 'name', name: 'name' },
                      { data: 'office_mail_id', name: 'office_mail_id' },
                      { data: 'designation', name: 'designation' },
-                     { data: 'action', name: 'action' },
+                     { data: 'user', name: 'user' }
                   ]
          });
       });
@@ -102,7 +103,7 @@ jQuery( document ).ready(function( $ ) {
           <!-- fix for small devices only -->
           <div class="clearfix hidden-md-up"></div>
 
-          <div class="col-12 col-sm-6 col-md-3">
+          <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
@@ -111,9 +112,9 @@ jQuery( document ).ready(function( $ ) {
                 <span class="info-box-number">{{ $int_avail }}</span>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
+         <!--  <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
@@ -121,10 +122,8 @@ jQuery( document ).ready(function( $ ) {
                 <span class="info-box-text">On Bench Members</span>
                 <span class="info-box-number">{{ $onBenchCount }}</span>
               </div>
-              <!-- /.info-box-content -->
             </div>
-            <!-- /.info-box -->
-          </div>
+          </div> -->
           <!-- /.col -->
         </div>
         <!-- /.row -->
@@ -143,10 +142,12 @@ jQuery( document ).ready(function( $ ) {
                           <table class="table table-bordered" id="table">
                               <thead>
                                  <tr>
+                                    {{--<th>#</th>--}}
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Designation</th>
                                     <th>Action</th>
+                                   
                                  </tr>
                               </thead>
                       </table>
